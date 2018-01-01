@@ -14,8 +14,6 @@ class UserController extends Controller
 
   public function store()
   {
-    var_dump('ねこ');
-    exit();
     $rules = [
       'email' => 'required|email|unique:users',
       'password'=>'required|confirmed',
