@@ -29,3 +29,7 @@ Route::post('login', array('uses' => 'HomeController@doLogin'));
 Route::get('logout', array('uses' => 'HomeController@doLogout'));
 //公演登録
 Route::get('/performanceEntry', 'AdminController@performanceEntry');
+//公演登録実行
+Route::get('/performanceExec', 'AdminController@performanceExec');
+//公演日一覧
+Route::get('/performanceDay', 'AdminController@performanceDay');
