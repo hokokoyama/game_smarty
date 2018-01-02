@@ -31,5 +31,7 @@ Route::get('logout', array('uses' => 'HomeController@doLogout'));
 Route::get('/performanceEntry', 'AdminController@performanceEntry');
 //公演登録実行
 Route::get('/performanceExec', 'AdminController@performanceExec');
+//公演リスト
+Route::get('/performanceList', 'AdminController@performanceList');
 //公演日一覧
 Route::get('/performanceDay', 'AdminController@performanceDay');

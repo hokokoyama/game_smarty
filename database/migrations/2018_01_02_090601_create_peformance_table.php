@@ -14,8 +14,7 @@ class CreatePeformanceTable extends Migration
     public function up()
     {
         Schema::create('peformance', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('mst_peformance_id');
+            $table->increments('mst_peformance_id');
             $table->char('name', 50);
             $table->dateTime('reserv_start_time');
             $table->dateTime('reserv_end_time');

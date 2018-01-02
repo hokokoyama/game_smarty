@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\View;
 use Illuminate\Validation\Validator;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\DB;
 
 class AdminController extends Controller{
   /**
@@ -15,14 +16,35 @@ class AdminController extends Controller{
     return view('performanceEntry');
   }
 
+  /**
+   * 公演登録実行画面
+   */
   public function performanceExec(){
-    return view('performanceDay');
+    $id = DB::table('peformance')->insert(
+      [
+        'name'=>Input::get('name'),
+        'reserv_start_time' => Input::get('reserv_start_time'),
+        'reserv_end_time' => Input::get('reserv_end_time'),
+        'start_time' => Input::get('start_time'),
+        'end_time' => Input::get('end_time'),
+      ]
+    );
+    return view('performanceDay', ['mst_peformance_id' => $id]);
+  }
+
+  /**
+   * 公演リスト画面
+   */
+  public function performanceList(){
+    $performanceData = DB::table('peformance')->get();
+    return view('performanceList', ['performanceData' => $performanceData]);
   }
 
   /**
    * 公演日一覧画面
    */
    public function performanceDay(){
+     var_dump($id);
      return view('performanceDay');
    }
 }

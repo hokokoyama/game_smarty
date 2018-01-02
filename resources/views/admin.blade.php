@@ -4,4 +4,6 @@
  <a href='users/create' class="btn btn-primary btn-lg">メンバー登録</a>
 
  <a href='/performanceEntry' class="btn btn-primary btn-lg">公演登録</a>
+
+ <a href='/performanceList' class="btn btn-primary btn-lg">公演リスト</a>
 @stop
