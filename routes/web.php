@@ -21,9 +21,9 @@ Route::get('/', function () {
 
 // usersにアクセスしたら、UserControllerを起動する
 Route::resource('users', 'UserController');
-
-Route::get('/home', 'HomeController@index')->name('home');
-Route::view('/login', 'auth.login')->name('login');
-Route::view('/register', 'auth.register')->name('register');
-Route::view('/register_create', 'RegisterController@create')->name('register_create');
-Route::view('/password.request', 'admin')->name('password.request');
+// ログインページを表示させるルーティング
+Route::get('login', array('uses' => 'HomeController@showLogin'));
+// ログインページのポスト機能のルーティング
+Route::post('login', array('uses' => 'HomeController@doLogin'));
+// ログアウト処理のルーティング
+Route::get('logout', array('uses' => 'HomeController@doLogout'));

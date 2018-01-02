@@ -4,8 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\View;
-use Illuminate\Validation\Validator;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -31,11 +34,9 @@ class UserController extends Controller
     $validator = Validator::make(Input::all(), $rules, $messages);
 
     if ($validator->passes()) {
-      $user = new User;
-      $user->email = Input::get('email');
-      $user->password = Hash::make(Input::get('password'));
-      $user->phone = Input::get('phone');
-      $user->save();
+      DB::table('users')->insert(
+        ['name' => '鋒山', 'email' => Input::get('email'), 'password' => Hash::make(Input::get('password'))]
+      );
       return Redirect::route('users.create')
         ->with('success', '会員登録しました。');
     }else{

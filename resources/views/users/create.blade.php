@@ -1,9 +1,9 @@
 @extends('layouts.default')
 @section('content')
 
-<h1>会員登録</h1>
+<h1>メンバ登録</h1>
 
-{{-- 会員登録完了時にフラッシュメッセージを表示 --}}
+{{-- メンバ登録完了時にフラッシュメッセージを表示 --}}
 @if(Session::has('success'))
 	<div class="bg-info">
 		<p>{{ Session::get('success') }}</p>
@@ -11,6 +11,16 @@
 @endif
 
 {{ Form::open(['route' => 'users.store'], array('class' => 'form-horizontal')) }}
+	<div class="form-group">
+		{{-- バリデーションのエラー表示 --}}
+		@foreach($errors->get('name') as $message)
+			<span class="bg-danger">{{ $message }}</span>
+		@endforeach
+		<label for="name" class="col-sm-2 control-label">名前</label>
+		<div class="col-sm-10">
+			<input name="name" type="name" class="form-control">
+		</div>
+	</div>
 
 	<div class="form-group">
 		{{-- バリデーションのエラー表示 --}}
@@ -46,18 +56,7 @@
 	</div>
 
 	<div class="form-group">
-		{{-- バリデーションのエラー表示 --}}
-		@foreach($errors->get('phone') as $message)
-			<span class="bg-danger">{{ $message }}</span>
-		@endforeach
-		<label for="phone" class="col-sm-2 control-label">電話番号</label>
-		<div class="col-sm-10">
-			<input name="phone" type="phone" class="form-control">
-		</div>
-	</div>
-
-	<div class="form-group">
-		<button type="submit" class="btn btn-primary">会員登録する</button>
+		<button type="submit" class="btn btn-primary">メンバ登録する</button>
 	</div>
 
 {{ Form::close() }}
