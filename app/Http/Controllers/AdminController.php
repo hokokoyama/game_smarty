@@ -44,7 +44,8 @@ class AdminController extends Controller{
    * 公演日一覧画面
    */
    public function performanceDay(){
-     var_dump($id);
-     return view('performanceDay');
+     $id = Input::get('mst_peformance_id');
+     $performanceDayData = DB::table('peformance_day')->where('mst_peformance_id', '=', $id)->get();
+     return view('performanceDay', ['performanceDayData' => $performanceDayData]);
    }
 }
