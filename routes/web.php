@@ -27,3 +27,5 @@ Route::get('login', array('uses' => 'HomeController@showLogin'));
 Route::post('login', array('uses' => 'HomeController@doLogin'));
 // ログアウト処理のルーティング
 Route::get('logout', array('uses' => 'HomeController@doLogout'));
+//公演登録
+Route::get('/performanceEntry', 'AdminController@performanceEntry');
