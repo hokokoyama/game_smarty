@@ -11,7 +11,7 @@
 @endif
 
 {{ Form::open(array('url' => 'login', 'class' => 'form-horizontal')) }}
-
+  {{ csrf_field() }}
 	<div class="form-group">
 		{{-- バリデーションのエラー表示 --}}
 		@foreach($errors->get('email') as $message)

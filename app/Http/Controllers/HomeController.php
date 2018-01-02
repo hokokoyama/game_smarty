@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\View;
-use Illuminate\Validation\Validator;
+use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
 
 class HomeController extends Controller
 {
@@ -33,7 +36,7 @@ class HomeController extends Controller
     if ($validator->passes()) {
       if (Auth::attempt($credentials)) {
         // ここではリダイレクト先を/loginに設定していますが、ここは状況に応じて変更してください
-        return Redirect::to('login')
+        return Redirect::to('admin')
         ->with('success', 'ログインしました。');
       }else{
         return Redirect::back()->withInput();

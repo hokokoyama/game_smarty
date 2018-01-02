@@ -15,8 +15,8 @@
     return view('welcome');
 });*/
 
-Route::get('/', function () {
-    return view('home');
+Route::get('/admin', function () {
+    return view('admin');
 });
 
 // usersにアクセスしたら、UserControllerを起動する
