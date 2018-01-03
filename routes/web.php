@@ -35,3 +35,7 @@ Route::get('/performanceExec', 'AdminController@performanceExec');
 Route::get('/performanceList', 'AdminController@performanceList');
 //公演日一覧
 Route::get('/performanceDay', 'AdminController@performanceDay');
+//公演日登録実行
+Route::get('/performanceDayExec', 'AdminController@performanceDayExec');
+//公演登録
+Route::get('/performanceDayEntry', 'AdminController@performanceDayEntry');

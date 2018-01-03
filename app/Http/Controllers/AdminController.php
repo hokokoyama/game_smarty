@@ -46,6 +46,30 @@ class AdminController extends Controller{
    public function performanceDay(){
      $id = Input::get('mst_peformance_id');
      $performanceDayData = DB::table('peformance_day')->where('mst_peformance_id', '=', $id)->get();
-     return view('performanceDay', ['performanceDayData' => $performanceDayData]);
+     return view('performanceDay', ['mstPerformanceId' => $id, 'performanceDayData' => $performanceDayData]);
+   }
+
+   /**
+    * 公演登録画面
+    */
+   public function performanceDayEntry(){
+     $id = Input::get('mst_peformance_id');
+     $performanceDayData = DB::table('peformance')->where('mst_peformance_id', '=', $id)->first();
+     return view('performanceDayEntry', ['mstPerformanceId' => $id, 'performanceDayData' => $performanceDayData]);
+   }
+
+   /**
+    * 公演登録実行画面
+    */
+   public function performanceDayExec(){
+     $id = Input::get('mst_peformance_id');
+     DB::table('peformance_day')->insert(
+       [
+         'mst_peformance_id'=>$id,
+         'day' => Input::get('day'),
+       ]
+     );
+     $performanceDayData = DB::table('peformance_day')->where('mst_peformance_id', '=', $id)->get();
+     return view('performanceDay', ['mstPerformanceId' => $id, 'performanceDayData' => $performanceDayData]);
    }
 }
