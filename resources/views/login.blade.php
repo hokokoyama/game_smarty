@@ -10,6 +10,7 @@
 	</div>
 @endif
 
+<div id="login">
 {{ Form::open(array('url' => 'login', 'class' => 'form-horizontal')) }}
   {{ csrf_field() }}
 	<div class="form-group">
@@ -17,10 +18,8 @@
 		@foreach($errors->get('email') as $message)
 			<span class="bg-danger">{{ $message }}</span>
 		@endforeach
-		<label for="email" class="col-sm-2 control-label">メールアドレス</label>
-		<div class="col-sm-10">
-			<input name="email" type="email" class="form-control">
-		</div>
+		<span class="fontawesome-user"></span>
+		<input type="text" id="user" name="email" placeholder="email">
 	</div>
 
 	<div class="form-group">
@@ -28,16 +27,14 @@
 		@foreach($errors->get('password') as $message)
 			<span class="bg-danger">{{ $message }}</span>
 		@endforeach
-		<label for="password" class="col-sm-2 control-label">パスワード</label>
-		<div class="col-sm-10">
-			<input name="password" type="password" class="form-control">
-		</div>
+		<span class="fontawesome-lock"></span>
+		<!--<label for="password" class="col-sm-2 control-label">パスワード</label>-->
+		<input type="password" id="pass" name="password" placeholder="Password">
 	</div>
 
 	<div class="form-group">
-		<button type="submit" class="btn btn-primary">ログインする</button>
+		<input type="submit" class="btn btn-primary" value="ログインする"></button>
 	</div>
 
 {{ Form::close() }}
-
 @stop
