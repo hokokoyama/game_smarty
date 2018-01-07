@@ -1,7 +1,7 @@
 @extends('layouts.default')
 @section('content')
 
-<h1>ログイン</h1>
+<center><h1>ログイン</h1></center>
 
 {{-- ログイン時にフラッシュメッセージを表示 --}}
 @if(Session::has('success'))
