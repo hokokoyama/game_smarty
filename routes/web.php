@@ -22,11 +22,11 @@ Route::get('/admin', function () {
 // usersにアクセスしたら、UserControllerを起動する
 Route::resource('users', 'UserController');
 // ログインページを表示させるルーティング
-Route::get('login', array('uses' => 'HomeController@showLogin'));
+Route::get('login', array('uses' => 'HomeController@showLogin'))->middleware('beforerun');
 // ログインページのポスト機能のルーティング
-Route::post('login', array('uses' => 'HomeController@doLogin'));
+Route::post('login', array('uses' => 'HomeController@doLogin'))->middleware('beforerun');
 // ログアウト処理のルーティング
-Route::get('logout', array('uses' => 'HomeController@doLogout'));
+Route::get('logout', array('uses' => 'HomeController@doLogout'))->middleware('beforerun');
 //公演登録
 Route::get('/performanceEntry', 'AdminController@performanceEntry');
 //公演登録実行
