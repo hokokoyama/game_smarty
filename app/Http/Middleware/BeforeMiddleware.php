@@ -15,6 +15,13 @@ class BeforeMiddleware
      * @return mixed
      */
     public function handle($request, Closure $next){
-        return $next($request);
+        if(isset($request['email'])){
+          return $next($request);
+        }
+        if(isset($request['user_id'])){
+          return $next($request);
+        }
+        header('location: /');
+        exit();
     }
 }

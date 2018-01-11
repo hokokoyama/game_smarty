@@ -19,6 +19,8 @@ Route::get('/admin', function () {
     return view('admin');
 });
 
+Route::view('/', 'login');
+
 // usersにアクセスしたら、UserControllerを起動する
 Route::resource('users', 'UserController');
 // ログインページを表示させるルーティング
