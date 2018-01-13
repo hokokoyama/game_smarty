@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -35,9 +36,8 @@ class HomeController extends Controller
 
     if ($validator->passes()) {
       if (Auth::attempt($credentials)) {
-        // ここではリダイレクト先を/loginに設定していますが、ここは状況に応じて変更してください
-        return Redirect::to('admin')
-        ->with('success', 'ログインしました。');
+        $uid = DB::table('users')->where('email', Input::get('email'))->value('id');
+        return view('admin',['userID' => $uid]);
       }else{
         return Redirect::back()->withInput();
       }

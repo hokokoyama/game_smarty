@@ -12,6 +12,16 @@ class AdminController extends Controller{
   /**
    * 公演登録画面
    */
+  public function top($request){
+    $uid = DB::table('users')->where('email', $request['email'])->value('id');
+    var_dump($uid);
+    exit();
+    return view('admin',['userID' => $uid]);
+  }
+
+  /**
+   * 公演登録画面
+   */
   public function performanceEntry(){
     return view('performanceEntry');
   }

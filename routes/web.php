@@ -15,9 +15,7 @@
     return view('welcome');
 });*/
 
-Route::get('/admin', function () {
-    return view('admin');
-});
+
 
 Route::view('/', 'login');
 
@@ -29,15 +27,17 @@ Route::get('login', array('uses' => 'HomeController@showLogin'))->middleware('be
 Route::post('login', array('uses' => 'HomeController@doLogin'))->middleware('beforerun');
 // ログアウト処理のルーティング
 Route::get('logout', array('uses' => 'HomeController@doLogout'))->middleware('beforerun');
+//管理画面トップ
+Route::get('/admin', 'AdminController@top')->middleware('beforerun');
 //公演登録
-Route::get('/performanceEntry', 'AdminController@performanceEntry');
+Route::get('/performanceEntry', 'AdminController@performanceEntry')->middleware('beforerun');
 //公演登録実行
-Route::get('/performanceExec', 'AdminController@performanceExec');
+Route::get('/performanceExec', 'AdminController@performanceExec')->middleware('beforerun');
 //公演リスト
-Route::get('/performanceList', 'AdminController@performanceList');
+Route::get('/performanceList', 'AdminController@performanceList')->middleware('beforerun');
 //公演日一覧
-Route::get('/performanceDay', 'AdminController@performanceDay');
+Route::get('/performanceDay', 'AdminController@performanceDay')->middleware('beforerun');
 //公演日登録実行
-Route::get('/performanceDayExec', 'AdminController@performanceDayExec');
+Route::get('/performanceDayExec', 'AdminController@performanceDayExec')->middleware('beforerun');
 //公演登録
-Route::get('/performanceDayEntry', 'AdminController@performanceDayEntry');
+Route::get('/performanceDayEntry', 'AdminController@performanceDayEntry')->middleware('beforerun');
