@@ -10,7 +10,13 @@
 	</header>
 	<body>
 		<div class="login_wrapper">
-			aaaaaaa
+			<div class="animate form login_form">
+				<section class="login_content">
+					<form>
+						<h1>Login</h1>
+					</form>
+				</section>
+			</div>
 		</div>
 	</body>
 </html>
