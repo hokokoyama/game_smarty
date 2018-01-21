@@ -9,8 +9,9 @@
 <br>
 <br>
  <form method="post" name="form1" action="/performanceEntry">
+   {{ csrf_field() }}
    <input type="hidden" name="user_id" value={{$userID}}>
-   <a class="btn btn-primary btn-lg" href="javascript:form1.submit()">公演登録</a>
+   <input type="submit" class="btn btn-primary btn-lg" href="javascript:form1.submit()" value="公演登録">
  </form>
 
  <a href='/performanceList' class="btn btn-primary btn-lg">公演リスト</a>

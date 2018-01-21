@@ -14,8 +14,6 @@ class AdminController extends Controller{
    */
   public function top($request){
     $uid = DB::table('users')->where('email', $request['email'])->value('id');
-    var_dump($uid);
-    exit();
     return view('admin',['userID' => $uid]);
   }
 

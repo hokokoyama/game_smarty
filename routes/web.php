@@ -30,7 +30,7 @@ Route::get('logout', array('uses' => 'HomeController@doLogout'))->middleware('be
 //管理画面トップ
 Route::get('/admin', 'AdminController@top')->middleware('beforerun');
 //公演登録
-Route::get('/performanceEntry', 'AdminController@performanceEntry')->middleware('beforerun');
+Route::post('/performanceEntry', 'AdminController@performanceEntry')->middleware('beforerun');
 //公演登録実行
 Route::get('/performanceExec', 'AdminController@performanceExec')->middleware('beforerun');
 //公演リスト

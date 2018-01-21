@@ -14,22 +14,22 @@
         <div class="form-group">
             <label><font size='5'>予約開始時間</font></label>
             <br>
-            <input type='text' name='reserv_start_time' size=20>
+            <input type='datetime-local' name='reserv_start_time' size=20>
         </div>
         <div class="form-group">
             <label><font size='5'>予約終了時間</font></label>
             <br>
-            <input type='text' name='reserv_end_time' size=20>
+            <input type='datetime-local' name='reserv_end_time' size=20>
         </div>
         <div class="form-group">
             <label><font size='5'>公演開始時間</font></label>
             <br>
-            <input type='text' name='start_time' size=20>
+            <input type='datetime-local' name='start_time' size=20>
         </div>
         <div class="form-group">
             <label><font size='5'>公演終了時間</font></label>
             <br>
-            <input type='text' name='end_time' size=20>
+            <input type='datetime-local' name='end_time' size=20>
         </div>
         <button type="submit"><font size='5'>登録</font></button>
     </form>
