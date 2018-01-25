@@ -7,6 +7,12 @@
 		<title>集合芸術ANDAZ管理画面</title>
 		<!-- bootstrap -->
 		<link href="css/custom.css" rel="stylesheet" type="text/css">
+		<link href="css/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+		<link href="css/animate.css/animate.min.css" rel="stylesheet" type="text/css">
+		<link href="css/nprogress/nprogress.css" rel="stylesheet" type="text/css">
+		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	</header>
 	<body>
 		<div class="login_wrapper">
@@ -14,6 +20,14 @@
 				<section class="login_content">
 					<form>
 						<h1>Login</h1>
+						<div>
+							<input type="text" class="form-control" placeholder="UserName" required>
+						</div>
+						<br>
+						<br>
+						<div>
+							<input type="text" class="form-control" placeholder="Password" required>
+						</div>
 					</form>
 				</section>
 			</div>
