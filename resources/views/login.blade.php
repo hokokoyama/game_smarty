@@ -28,6 +28,11 @@
 						<div>
 							<input type="text" class="form-control" placeholder="Password" required>
 						</div>
+						<br>
+						<br>
+						<div>
+							<a class="btn btn-default submit" href="#">ログイン</a>
+						</div>
 					</form>
 				</section>
 			</div>
